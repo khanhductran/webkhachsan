@@ -40,20 +40,26 @@ function giaPhong(loai) {
 }
 
 /* ================= ROOM CARD ================= */
+/* ================= ROOM CARD (CẬP NHẬT 3 ẢNH KHÁC NHAU) ================= */
 function hienThiRoomCards() {
-    let types = ["Thường", "VIP", "Gia đình"];
+    const dataLoai = [
+        { loai: "Thường", img: "images/thuong.jpg", mieuTa: "Không gian sạch sẽ, tiện nghi cơ bản." },
+        { loai: "VIP", img: "images/vip.jpg", mieuTa: "Sang trọng, đẳng cấp với tầm nhìn đẹp." },
+        { loai: "Gia đình", img: "images/giadinh.jpg", mieuTa: "Rộng rãi, ấm cúng cho cả gia đình." }
+    ];
+
     let html = "";
-    types.forEach(loai => {
+    dataLoai.forEach(item => {
         html += `
         <div class="card">
-            <img src="images/room.jpg">
+            <img src="${item.img}" alt="Phòng ${item.loai}">
             <div class="info">
-                <h2>Phòng ${loai}</h2>
-                <p>Không gian sạch sẽ, tiện nghi, hiện đại.</p>
+                <h2>Phòng ${item.loai}</h2>
+                <p>${item.mieuTa}</p>
             </div>
             <div class="price">
-                <h3>${giaPhong(loai).toLocaleString()} ₫</h3>
-                <button onclick="moDatPhong('${loai}')">Đặt phòng</button>
+                <h3>${giaPhong(item.loai).toLocaleString()} ₫</h3>
+                <button onclick="moDatPhong('${item.loai}')">Đặt phòng</button>
             </div>
         </div>`;
     });
