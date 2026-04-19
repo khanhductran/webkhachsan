@@ -1,0 +1,85 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thanh Muong Hotel</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="header">
+    <h1>🏨 Thanh Muong Hotel</h1>
+    <div id="clock"></div>
+    <input type="text" id="timkiem" placeholder="🔍 Tìm kiếm khách / phòng..." onkeyup="timKiem()">
+</div>
+
+<!-- Dashboard -->
+<div class="dashboard">
+    <div class="dash-card">
+        <h3>Tổng phòng</h3>
+        <p id="tongPhong">40</p>
+    </div>
+
+    <div class="dash-card">
+        <h3>Đang thuê</h3>
+        <p id="dangThue">0</p>
+    </div>
+
+    <div class="dash-card">
+        <h3>Phòng trống</h3>
+        <p id="phongTrong">40</p>
+    </div>
+
+    <div class="dash-card">
+        <h3>Doanh thu</h3>
+        <p id="doanhthu">0 ₫</p>
+    </div>
+</div>
+
+<!-- Room cards -->
+<div id="room-list" class="room-list"></div>
+
+<!-- Legend -->
+<div class="legend">
+<b>Trạng thái:</b>
+<span class="box trong"></span> Trống
+<span class="box day"></span> Đang ở
+<span class="box saptra"></span> Sắp trả
+
+<br><br>
+
+<b>Loại phòng:</b>
+<span class="box thuong-border"></span> Thường
+<span class="box vip-border"></span> VIP
+<span class="box family-border"></span> Gia đình
+</div>
+
+<h2>🏨 Sơ đồ phòng</h2>
+<div id="rooms"></div>
+
+<h2>📋 Danh sách khách thuê</h2>
+
+<table>
+<thead>
+<tr>
+<th>Tên khách</th>
+<th>Phòng</th>
+<th>Loại</th>
+<th>Check-in</th>
+<th>Check-out</th>
+<th>Dịch vụ</th>
+<th>Tiền</th>
+<th>Hành động</th>
+</tr>
+</thead>
+
+<tbody id="danhsach"></tbody>
+</table>
+
+<div id="popup" class="popup"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
